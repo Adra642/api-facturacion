@@ -14,27 +14,27 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @GetMapping("/categories")
-    public List<Category> findAll() {
-        return categoryService.findAll();
+    public List<Category> findAllCategories() {
+        return categoryService.getAll();
     }
 
     @GetMapping("/category/{id}")
-    public Category findById(@PathVariable Long id) {
-        return categoryService.findById(id);
+    public Category findCategoryById(@PathVariable Long id) {
+        return categoryService.getById(id);
     }
 
     @PostMapping("/category")
     public void saveCategory(@RequestBody Category category) {
-        categoryService.saveCategory(category);
+        categoryService.save(category);
     }
 
     @PutMapping("/category")
-    public void editById(@RequestBody Category category) {
-        categoryService.saveCategory(category);
+    public void editCategory(@RequestBody Category category) {
+        categoryService.save(category);
     }
 
     @DeleteMapping("/category/{id}")
-    public void deleteById(@PathVariable Long id) {
+    public void deleteCategory(@PathVariable Long id) {
         categoryService.deleteById(id);
     }
 }

@@ -12,15 +12,15 @@ import java.util.List;
 public class CategoryService {
     private final CategoryRepository categoryRepository;
 
-    public List<Category> findAll() {
+    public List<Category> getAll() {
         return categoryRepository.findAll();
     }
 
-    public Category findById(Long id) {
+    public Category getById(Long id) {
         return categoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Note not found with id: " + id));
     }
 
-    public void saveCategory(Category category) {
+    public void save(Category category) {
         categoryRepository.save(category);
     }
 
