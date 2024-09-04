@@ -16,7 +16,7 @@ public class SupplierService {
         return supplierRepository.findAll();
     }
 
-    public Supplier getById(Long id) {
+    public Supplier getById(long id) {
         return supplierRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Supplier not found with id: " + id));
     }
 
@@ -24,7 +24,7 @@ public class SupplierService {
         supplierRepository.save(supplier);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         supplierRepository.deleteById(id);
     }
 }

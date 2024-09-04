@@ -16,15 +16,15 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public Category getById(Long id) {
-        return categoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Note not found with id: " + id));
+    public Category getById(long id) {
+        return categoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Category not found with id: " + id));
     }
 
     public void save(Category category) {
         categoryRepository.save(category);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(long id) {
         categoryRepository.deleteById(id);
     }
 }

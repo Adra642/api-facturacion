@@ -19,7 +19,7 @@ public class SupplierController {
     }
 
     @GetMapping("/supplier/{id}")
-    public Supplier findSupplierById(@PathVariable Long id) {
+    public Supplier findSupplierById(@PathVariable long id) {
         return supplierService.getById(id);
     }
 
@@ -34,7 +34,7 @@ public class SupplierController {
     }
 
     @DeleteMapping("/supplier/{id}")
-    public void deleteSupplier(@PathVariable Long id) {
+    public void deleteSupplier(@PathVariable long id) {
         supplierService.deleteById(id);
     }
 }
